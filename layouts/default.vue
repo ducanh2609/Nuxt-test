@@ -12,7 +12,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: rgb(144, 226, 176);
+  background-color: rgb(90, 179, 124);
   .app-layout {
     p {
       text-align: center;
