@@ -1,7 +1,7 @@
 <template>
   <div class="todoapp-box">
     <h1>Todo List</h1>
-    <input v-model="newValue" class="todo-new-input" type="text" placeholder="New todo" @keypress.enter="status = '' ? post() : update()" />
+    <input v-model="newValue" class="todo-new-input" type="text" placeholder="New todo" @keypress.enter=" status === '' ? post() : update()" />
     <div class="todo-list-box">
       <div v-for="(todo, index) in filterTodos" :key="todo.id" class="todo-list-item" :class="todo.done ? 'complete' : ''">
         <span @click="updateTodolist(todo)">{{ index + 1 }} . {{ todo.todo }}</span>
@@ -71,6 +71,7 @@ export default {
       this.updateTodolist(data)
       this.newValue = ''
       this.idEdit = -1
+      this.status = ''
     }
   }
 }
@@ -112,7 +113,7 @@ export default {
   }
 
   .todo-list-box {
-    height: 60%;
+    height: 70%;
     background-color: white;
     border-radius: 5px;
     box-shadow: inset 3px 3px 5px rgb(63, 55, 41);
